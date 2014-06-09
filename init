@@ -1,0 +1,16 @@
+#!/usr/bin/env /usr/bin/python
+
+import os
+import sys
+
+
+
+def main(argv):
+    product_git_src = argv[1]
+    product_tmp_dir = "tmp/product"
+    os.system("git clone " + product_git_src + " " + product_tmp_dir)
+#    os.system("rm -rf " + product_tmp_dir)
+
+if '__main__' == __name__:
+	main(sys.argv[0:])
+
