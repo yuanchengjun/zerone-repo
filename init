@@ -4,12 +4,15 @@ import os
 import sys
 
 
-
 def main(argv):
     product_git_src = argv[1]
-    product_tmp_dir = "tmp/product"
-    os.system("git clone " + product_git_src + " " + product_tmp_dir)
-#    os.system("rm -rf " + product_tmp_dir)
+    product_dir_tmp = "repo/_init/product"
+    product_file_property = product_dir_tmp + "/property"
+    os.system("rm -rfv " + product_dir_tmp)
+    os.system("git clone " + product_git_src + " " + product_dir_tmp)
+    product_property = open(product_file_property)
+    product_property.close()
+    
 
 if '__main__' == __name__:
 	main(sys.argv[0:])
